@@ -1,7 +1,7 @@
 export default [{
         text: "1. Nejlepší dovolená?",
         answers: [
-            { text: "U moře na pláži s koktejlem v ruce.", scores: [1, 1, 0, 0, 0, 0, 0] },
+            { text: "U moře na pláži s koktejlem v ruce.", scores: [1, 0, 0, 0, 0, 0, 0] },
             { text: "Aktivní dovolená, např. hory, divoká řeka, motorka.", scores: [0, 0, 1, 1, 0, 0, 0] },
             { text: "Kdekoliv a jakkoliv, hlavně když to bude s rodinou, partnerem nebo přáteli.", scores: [0, 1, 1, 0, 0, 0, 0] },
             { text: "Nemám čas na pořádnou dovolenou, musím pracovat.", scores: [0, 0, 0, 0, 1, 1, 1] }
