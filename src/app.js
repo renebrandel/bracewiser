@@ -20,3 +20,4 @@ server.post('/api/messages', connector.listen())
 bot.dialog('/', (session) => {
   session.send('Hello, Word!')
 })
+
