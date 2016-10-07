@@ -4,13 +4,13 @@ import builder from 'botbuilder'
 // Setting up the server
 const server = restify.createServer()
 server.listen(3978, () => {
-  console.log('%s listening to %s', server.name, server.url)
+    console.log('%s listening to %s', server.name, server.url)
 })
 
 // Create chat bot
 const connector = new builder.ChatConnector({
-  appId: process.env.APP_ID,
-  appPassword: process.env.APP_SECRET,
+    appId: process.env.APP_ID,
+    appPassword: process.env.APP_SECRET,
 })
 
 const bot = new builder.UniversalBot(connector)
@@ -18,6 +18,5 @@ const bot = new builder.UniversalBot(connector)
 server.post('/api/messages', connector.listen())
 
 bot.dialog('/', (session) => {
-  session.send('Hello, Word!')
+    session.send('Hello, Word!')
 })
-
