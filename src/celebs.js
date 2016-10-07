@@ -12,8 +12,7 @@ const celebs = [{
         picture: "https://www.charliehoksandy.cz/out/pictures/z2/sam_9815_z2.jpg"
     }
     ]
-},
-{}]
+}]
 
 export function returnCeleb(index) {
     return celebs[index]
