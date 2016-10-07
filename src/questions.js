@@ -1,4 +1,4 @@
-const questions = [{
+export default [{
         text: "1. Nejlepší dovolená?",
         answers: [
             { text: "U moře na pláži s koktejlem v ruce.", scores: [1, 1, 0, 0, 0, 0, 0] },
@@ -16,7 +16,6 @@ const questions = [{
             { text: "Nejradši chodím pěšky", scores: [0, 0, 0, 0, 0, 1, 0] }
         ]
     },
-
     {
         text: "3. Jedete na pustý ostrov, jaká věc by Vám nemohla chybět?",
         answers: [
@@ -26,7 +25,6 @@ const questions = [{
             { text: "Sirky", scores: [1, 0, 0, 0, 0, 0, 1] }
         ]
     },
-
     {
         text: "4. Na večeři byste nejraději pozval:",
         answers: [
@@ -36,7 +34,6 @@ const questions = [{
             { text: "Cameron Diaz", scores: [1, 1, 0, 0, 0, 0, 0] }
         ]
     },
-
     {
         text: "5. Považujete se spíše za:",
         answers: [
@@ -46,7 +43,6 @@ const questions = [{
             { text: "Idealistu, hledajícího svou vlastní identitu.", scores: [0, 1, 0, 0, 0, 0, 0] }
         ]
     },
-
     {
         text: "6. Jaké z následujících období je Vám nejbližší?",
         answers: [
@@ -56,7 +52,6 @@ const questions = [{
             { text: "21. století (budoucnost – technologie, inovace, globalizace).", scores: [1, 0, 0, 1, 0, 0, 0] }
         ]
     },
-
     {
         text: "7. Big Apple znamená:",
         answers: [
@@ -66,7 +61,6 @@ const questions = [{
             { text: "Vše výše uvedené.", scores: [0, 0, 0, 0, 0, 0, 1] }
         ]
     },
-
     {
         text: "8. Kam se chystáte nosit své nové kšandy?",
         answers: [
@@ -76,7 +70,4 @@ const questions = [{
             { text: "Ke svému hobby – lyžování, rybářství, military atd.", scores: [0, 0, 1, 0, 0, 0, 0] }
         ]
     }
-
-
-
 ]

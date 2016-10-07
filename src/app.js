@@ -1,5 +1,6 @@
 import restify from 'restify'
 import builder from 'botbuilder'
+import Questions from './questions'
 
 // Setting up the server
 const server = restify.createServer()
@@ -20,4 +21,3 @@ server.post('/api/messages', connector.listen())
 bot.dialog('/', (session) => {
   session.send('Hello, Word!')
 })
-
