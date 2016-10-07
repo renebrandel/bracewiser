@@ -20,11 +20,27 @@ server.post('/api/messages', connector.listen())
 
 bot.dialog(
   '/', 
-  Questions.map(question => (session, result, next) => {
+  [
+    (session, args, next) => {
+      session.userData.answers = []
+      next()
+    }, ...Questions.map(question => (session, result, next) => {
+      if (result.response) {
+        session.userData.answers.push(result.response)
+      }
       const card = new builder.HeroCard(session)
         .text(question.text)
         .buttons(question.answers.map(answer => builder.CardAction.imBack(session, answer.text, answer.text)))
       const msg = new builder.Message(session).attachments([card])
       builder.Prompts.text(session, msg)
-  })
+    }), (session, result) => {
+      if (result.response) {
+        session.userData.answers.push(result.response)
+      }
+      const scores = session.userData.answers
+        .map((response, index) => Questions[index].answers.find(answer => answer.text === response).scores)
+        .reduce((prev, curr) => prev.map((value, index) => value + curr[index]), [0, 0, 0, 0, 0, 0, 0])
+      session.send(scores.join('<br/>'))
+    }
+  ]
 )
