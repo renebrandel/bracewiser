@@ -18,6 +18,13 @@ const bot = new builder.UniversalBot(connector)
 
 server.post('/api/messages', connector.listen())
 
-bot.dialog('/', (session) => {
-  session.send('Hello, Word!')
-})
+bot.dialog(
+  '/', 
+  Questions.map(question => (session, result, next) => {
+      const card = new builder.HeroCard(session)
+        .text(question.text)
+        .buttons(question.answers.map(answer => builder.CardAction.imBack(session, answer.text, answer.text)))
+      const msg = new builder.Message(session).attachments([card])
+      builder.Prompts.text(session, msg)
+  })
+)
