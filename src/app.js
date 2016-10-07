@@ -10,7 +10,7 @@ server.listen(3978, () => {
 // Create chat bot
 const connector = new builder.ChatConnector({
   appId: process.env.APP_ID,
-  appPassword: process.env.APP_PASSWORD,
+  appPassword: process.env.APP_SECRET,
 })
 
 const bot = new builder.UniversalBot(connector)
@@ -18,6 +18,5 @@ const bot = new builder.UniversalBot(connector)
 server.post('/api/messages', connector.listen())
 
 bot.dialog('/', (session) => {
-  // Edit more dialog here
   session.send('Hello!')
 })
