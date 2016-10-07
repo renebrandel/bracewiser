@@ -9,8 +9,8 @@ server.listen(3978, () => {
 
 // Create chat bot
 const connector = new builder.ChatConnector({
-  appId: 'YOUR_APP_ID',
-  appPassword: 'YOUR_APP_PASSWORD',
+  appId: process.env.APP_ID,
+  appPassword: process.env.APP_PASSWORD,
 })
 
 const bot = new builder.UniversalBot(connector)
